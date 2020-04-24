@@ -35,6 +35,7 @@
     "MixinSplashScreen",
     "MixinTranslationStorage",
     "MixinWorldChunk",
+    "MixinLoginSuccessS2CPacket",
 
     "HandshakePacketAccessor",
     "SpawnEggItemAccessor",

@@ -42,9 +42,9 @@ public class MixinDecoderHandler {
 
     @Inject(method = "decode", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/Packet;read(Lnet/minecraft/network/PacketByteBuf;)V", shift = At.Shift.AFTER), locals = LocalCapture.CAPTURE_FAILHARD)
     private void postDecode(ChannelHandlerContext context, ByteBuf buf, List<Object> output, CallbackInfo ci, PacketByteBuf packetBuf, int packetId, Packet<?> packet) {
-        if (!((TransformerByteBuf) packetBuf).canDecodeAsync(packet.getClass())) {
+        /*if (!((TransformerByteBuf) packetBuf).canDecodeAsync(packet.getClass())) {
             ConnectionInfo.resourceReloadLock.readLock().unlock();
-        }
+        }*/
     }
 
 }
