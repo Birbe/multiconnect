@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinSplashScreen {
 
     @Inject(method = "render", at = @At(value = "FIELD", opcode = Opcodes.PUTFIELD, target = "Lnet/minecraft/client/gui/screen/SplashScreen;applyCompleteTime:J"))
-    private void onResourceReloadComplete(int mouseX, int mouseY, float delta, CallbackInfo ci) {
+    private void onResourceReloadComplete(CallbackInfo ci) {
         ConnectionInfo.protocol.setup(true);
         ConnectionInfo.stopReloadingResources();
     }
